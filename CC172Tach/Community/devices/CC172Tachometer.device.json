@@ -1,0 +1,28 @@
+{
+    "$schema": "./mfdevice.schema.json",
+    "Info": {
+      "Label": "CCrawford's C172 Tachometer",
+      "Type": "CC172Tach",
+      "Author": "CCrawford",
+      "URL": "https://github.com/CCrawford/FSHardware",
+      "Version" : "1.0.0"
+    },
+    "Config": {
+      "Pins": [
+      ],
+      "isI2C": false
+    },
+    "MessageTypes": [
+      {
+        "id": 0,
+        "label": "Set Engine RPM",
+        "description": "$ will be displayed as Tachometer value"
+      },
+      {
+        "id": 1,
+        "label": "Set Engine Hours",
+        "description": "$ will be displayed as the Engine Hours"
+      }
+    ]
+  }
+  

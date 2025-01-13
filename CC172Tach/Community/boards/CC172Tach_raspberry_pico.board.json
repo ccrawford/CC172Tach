@@ -17,21 +17,20 @@
     "Info": {
       "CanInstallFirmware": true,
       "CanResetBoard": true,
-      "FirmwareBaseName": "mobiflight_template_raspberrypico",
+      "FirmwareBaseName": "CC172Tach_raspberrypico",
       "FirmwareExtension": "uf2",
-      "FriendlyName": "MobiFlight Template RaspiPico",
-      "LatestFirmwareVersion": "0.0.1",
-      "MobiFlightType": "Mobiflight Template RaspiPico",
+      "FriendlyName": "CC 172 Tachometer RaspiPico",
+      "LatestFirmwareVersion": "2.5.1",
+      "MobiFlightType": "CC172Tach Pico",
       "ResetFirmwareFile": "reset.raspberry_pico_flash_nuke.uf2",
       "CustomDeviceTypes": [
-        "MOBIFLIGHT_TEMPLATE",
-        "MOBIFLIGHT_TEMPLATE2"
+        "CC172Tach"
       ],
       "Community": {
-        "Project": "Your Project",
-        "Website": "https://YourWebsite.com",
-        "Docs": "https://YourWebsite.com",
-        "Support": "https://YourWebsite.com"
+        "Project": "CC Cessna 172 Tachometer",
+        "Website": "https://github.com/ccrawford/FSHardware",
+        "Docs": "https://github.com/ccrawford/FSHardware",
+        "Support": "https://github.com/ccrawford/FSHardware"
       }
     },
     "ModuleLimits": {

@@ -1,18 +1,23 @@
 #pragma once
 
 #include "Arduino.h"
+#include <TFT_eSPI.h>
 
-class MyCustomClass
+
+class CC172Tach
 {
 public:
-    MyCustomClass(uint8_t Pin1, uint8_t Pin2);
+    CC172Tach();
     void begin();
-    void attach(uint16_t Pin3, char *init);
+    void attach();
     void detach();
     void set(int16_t messageID, char *setPoint);
     void update();
 
 private:
     bool    _initialised;
-    uint8_t _pin1, _pin2, _pin3;
+    int _curRpm = 0;
+    double _curHours = 0;
+    bool updateRPM();
+    bool updateEngineHours();
 };

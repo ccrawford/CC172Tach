@@ -85,16 +85,16 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         is used to store the type
     ********************************************************************************** */
     getStringFromMem(adrType, parameter, configFromFlash);
-    if (strcmp(parameter, "MOBIFLIGHT_TEMPLATE") == 0)
+    if (strcmp(parameter, "CC172Tach") == 0)
         _customType = MY_CUSTOM_DEVICE_1;
-    if (strcmp(parameter, "MOBIFLIGHT_TEMPLATE2") == 0)
-        _customType = MY_CUSTOM_DEVICE_2;
+    // if (strcmp(parameter, "MOBIFLIGHT_TEMPLATE2") == 0)
+    //     _customType = MY_CUSTOM_DEVICE_2;
 
     if (_customType == MY_CUSTOM_DEVICE_1) {
         /* **********************************************************************************
             Check if the device fits into the device buffer
         ********************************************************************************** */
-        if (!FitInMemory(sizeof(MyCustomClass))) {
+        if (!FitInMemory(sizeof(CC172Tach))) {
             // Error Message to Connector
             cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
             return;
@@ -140,8 +140,8 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         ********************************************************************************** */
         // In most cases you need only one of the following functions
         // depending on if the constuctor takes the variables or a separate function is required
-        _mydevice = new (allocateMemory(sizeof(MyCustomClass))) MyCustomClass(_pin1, _pin2);
-        _mydevice->attach(Parameter1, Parameter2);
+        _mydevice = new (allocateMemory(sizeof(CC172Tach))) CC172Tach();
+        _mydevice->attach();
         // if your custom device does not need a separate begin() function, delete the following
         // or this function could be called from the custom constructor or attach() function
         _mydevice->begin();
@@ -150,7 +150,7 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         /* **********************************************************************************
             Check if the device fits into the device buffer
         ********************************************************************************** */
-        if (!FitInMemory(sizeof(MyCustomClass))) {
+        if (!FitInMemory(sizeof(CC172Tach))) {
             // Error Message to Connector
             cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
             return;
@@ -197,8 +197,8 @@ void MFCustomDevice::attach(uint16_t adrPin, uint16_t adrType, uint16_t adrConfi
         ********************************************************************************** */
         // In most cases you need only one of the following functions
         // depending on if the constuctor takes the variables or a separate function is required
-        _mydevice = new (allocateMemory(sizeof(MyCustomClass))) MyCustomClass(_pin1, _pin2);
-        _mydevice->attach(Parameter1, Parameter2);
+        _mydevice = new (allocateMemory(sizeof(CC172Tach))) CC172Tach();
+        _mydevice->attach();
         // if your custom device does not need a separate begin() function, delete the following
         // or this function could be called from the custom constructor or attach() function
         _mydevice->begin();
